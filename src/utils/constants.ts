@@ -1,0 +1,25 @@
+export const ANIMATION_DELAYS = {
+  BADGE: 0,
+  TIMER: 200,
+  TITLE: 400,
+  TRUST_BADGES: 600,
+  CTA: 1000,
+  SCROLL: 1200
+};
+
+export const ANIMATION_DURATION = 1000;
+
+export const COUNTDOWN_INITIAL_HOURS = 24;
+
+export const AVAILABLE_SPOTS = 16;
+
+export const PRICING = {
+  ORIGINAL: 497,
+  DISCOUNTED: 197,
+  DISCOUNT_PERCENTAGE: 60
+};
+
+export const METRICS = {
+  RATING: "4.8/5",
+  SATISFIED_CUSTOMERS: "+10.000"
+};

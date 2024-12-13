@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    height: -webkit-fill-available;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000000;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    @apply antialiased;
+    overscroll-behavior-y: contain;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  #root {
+    isolation: isolate;
+  }
+}
+
+@layer utilities {
+  .min-h-screen {
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .h-screen {
+    height: 100vh; /* Fallback */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  /* Mobile-specific touch feedback */
+  @media (hover: none) {
+    .touch-feedback {
+      @apply active:opacity-80 transition-opacity;
+    }
+  }
+}
+
+/* Mobile momentum scrolling */
+.scrolling-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safe area insets */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

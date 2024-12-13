@@ -1,0 +1,45 @@
+/* Layout-specific styles */
+@layer utilities {
+  /* Responsive paddings */
+  .section-padding {
+    @apply py-16 sm:py-24;
+  }
+  
+  .content-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Fixed header offset */
+  .header-offset {
+    @apply pt-16 sm:pt-20;
+  }
+
+  /* Container max-widths */
+  .container-sm {
+    @apply max-w-3xl;
+  }
+  
+  .container-md {
+    @apply max-w-5xl;
+  }
+  
+  .container-lg {
+    @apply max-w-7xl;
+  }
+
+  /* Grid layouts */
+  .responsive-grid {
+    @apply grid gap-6 sm:gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  /* Flex layouts */
+  .flex-responsive {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  /* Spacing utilities */
+  .stack-space > * + * {
+    @apply mt-4 sm:mt-6;
+  }
+}

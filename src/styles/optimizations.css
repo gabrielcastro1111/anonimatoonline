@@ -1,0 +1,62 @@
+/* Performance optimizations */
+@layer utilities {
+  /* Optimize animations for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Mobile optimizations */
+  .mobile-device {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Hardware acceleration */
+  .hardware-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Prevent layout shifts */
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+}
+
+/* Loading optimizations */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Mobile-specific touch feedback */
+@media (hover: none) {
+  .touch-feedback {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .touch-feedback::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+  }
+
+  .touch-feedback:active::after {
+    opacity: 0.1;
+  }
+}
